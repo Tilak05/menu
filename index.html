@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style-type: none;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(99, 230, 240);
+        }
+
+        .logo i{
+            color: #ffff;
+            font-size: 40px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        nav{
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #a764ffe5;
+            position: relative;
+            height: 70px;
+        }
+
+        nav ul{
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a{
+            color: #ffff;
+        }
+        .menu-icon i{
+            color: #ffff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-icon{
+            display: none;
+        }
+        @media (max-width:600px){
+            nav ul{
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                text-align: center;
+                background-color: #a764ffe5;
+                overflow: hidden;
+                width: 90%;
+                margin: 10px auto;
+                
+                border: none;
+                border-radius: 5px;
+            }
+            nav ul li{
+                padding: 20px;
+            }
+            .menu-icon{
+                display: block;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fa-solid fa-cloud"></i>
+        </div>
+        <ul id="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Product</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars" onclick="changeIcon(this)"></i>
+        </div>
+    </nav>
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight="0px";
+
+        function toggleMenu(){
+            if(menuList.style.maxHeight == "0px"){
+                menuList.style.maxHeight = "400px";
+                menuList.style.transition = "all 0.3s";
+        }
+        else{
+            menuList.style.maxHeight = "0px";
+        }
+    }
+
+        let changeIcon=function(icon){
+            icon.classList.toggle('fa-times');
+        }
+    
+    </script>
+</body>
+</html>
